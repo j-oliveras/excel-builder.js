@@ -26,6 +26,4 @@ try {
         window.ExcelBuilder = EBExport;
     }
 } catch (e) {
-    //Silently ignore?
-    console.info("Not attaching EB to window");
 }
