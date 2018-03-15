@@ -5032,8 +5032,6 @@ try {
         window.ExcelBuilder = EBExport;
     }
 } catch (e) {
-    //Silently ignore?
-    console.info("Not attaching EB to window");
 }
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./Excel/Drawing/index":12,"./Excel/Drawings":13,"./Excel/Pane":14,"./Excel/Paths":15,"./Excel/Positioning":16,"./Excel/RelationshipManager":17,"./Excel/SharedStrings":18,"./Excel/SheetProtection":19,"./Excel/SheetView":20,"./Excel/StyleSheet":21,"./Excel/Table":22,"./Excel/Workbook":23,"./Excel/Worksheet":24,"./Excel/WorksheetExportWorker":25,"./Excel/XMLDOM":26,"./Excel/ZipWorker":27,"./Excel/util":28,"./Template":30,"./excel-builder":31}],"q":[function(require,module,exports){

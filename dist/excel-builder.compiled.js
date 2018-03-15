@@ -7219,8 +7219,6 @@ try {
         window.ExcelBuilder = EBExport;
     }
 } catch (e) {
-    //Silently ignore?
-    console.info("Not attaching EB to window");
 }
 },{"./Excel/Drawing/index":31,"./Excel/Drawings":32,"./Excel/Pane":33,"./Excel/Paths":34,"./Excel/Positioning":35,"./Excel/RelationshipManager":36,"./Excel/SharedStrings":37,"./Excel/SheetProtection":38,"./Excel/SheetView":39,"./Excel/StyleSheet":40,"./Excel/Table":41,"./Excel/Workbook":42,"./Excel/Worksheet":43,"./Excel/WorksheetExportWorker":44,"./Excel/XMLDOM":45,"./Excel/ZipWorker":46,"./Excel/util":47,"./Template":49,"./excel-builder":50,"lodash":"lodash"}],"jszip":[function(require,module,exports){
 'use strict';
