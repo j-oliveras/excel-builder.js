@@ -23,7 +23,7 @@ var OneCellAnchor = function (config) {
         this.setDimensions(config.width, config.height);
     }
 };
-_.extend(OneCellAnchor.prototype, {
+Object.assign(OneCellAnchor.prototype, {
     setPos: function (x, y, xOff, yOff) {
         this.x = x;
         this.y = y;

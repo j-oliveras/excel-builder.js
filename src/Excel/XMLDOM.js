@@ -6,7 +6,7 @@ var XMLDOM = function (ns, rootNodeName) {
     this.documentElement.setAttribute('xmlns', ns);
 };
 
-_.extend(XMLDOM.prototype, {
+Object.assign(XMLDOM.prototype, {
     createElement: function (name) {
         return new XMLDOM.XMLNode({
             nodeName: name
@@ -33,7 +33,7 @@ XMLDOM.Node.Create = function (config) {
 XMLDOM.TextNode = function (text) {
     this.nodeValue = text;
 };
- _.extend(XMLDOM.TextNode.prototype, {
+ Object.assign(XMLDOM.TextNode.prototype, {
      toJSON: function () {
          return {
              nodeValue: this.nodeValue,
@@ -65,7 +65,7 @@ XMLDOM.XMLNode = function (config) {
         }
     }
 };
-_.extend(XMLDOM.XMLNode.prototype, {
+Object.assign(XMLDOM.XMLNode.prototype, {
 
     toString: function () {
         var string = "<" + this.nodeName;

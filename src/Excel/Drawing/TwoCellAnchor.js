@@ -10,7 +10,7 @@ var TwoCellAnchor = function (config) {
         this.setTo(config.to.x, config.to.y, config.to.xOff, config.to.yOff);
     }
 };
-_.extend(TwoCellAnchor.prototype, {
+Object.assign(TwoCellAnchor.prototype, {
     setFrom: function (x, y, xOff, yOff) {
         this.from.x = x;
         this.from.y = y;

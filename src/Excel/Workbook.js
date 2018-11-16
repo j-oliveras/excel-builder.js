@@ -21,7 +21,7 @@ var Workbook = function (config) {
     this.media = {};
     this.initialize(config);
 };
-_.extend(Workbook.prototype, {
+Object.assign(Workbook.prototype, {
 
     initialize: function () {
         this.id = _.uniqueId('Workbook');
@@ -221,7 +221,7 @@ _.extend(Workbook.prototype, {
 
     _prepareFilesForPackaging: function (files) {
 
-        _.extend(files, {
+        Object.assign(files, {
             '/[Content_Types].xml': this.createContentTypes(),
             '/_rels/.rels': this.createWorkbookRelationship(),
             '/xl/styles.xml': this.styleSheet.toXML(),

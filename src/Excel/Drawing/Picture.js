@@ -13,7 +13,7 @@ var Picture = function () {
 
 Picture.prototype = new Drawing();
 
-_.extend(Picture.prototype, {
+Object.assign(Picture.prototype, {
     setMedia: function (mediaRef) {
         this.mediaData = mediaRef;
     },
@@ -24,7 +24,7 @@ _.extend(Picture.prototype, {
         this.fill.type = type;
     },
     setFillConfig: function (config) {
-        _.extend(this.fill, config);
+        Object.assign(this.fill, config);
     },
     getMediaType: function () {
         return 'image';

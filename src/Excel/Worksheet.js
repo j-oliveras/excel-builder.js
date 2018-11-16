@@ -30,7 +30,7 @@ var SheetView = require('./SheetView');
         this.showZeros = null;
         this.initialize(config);
     };
-    _.extend(Worksheet.prototype, {
+    Object.assign(Worksheet.prototype, {
         
         initialize: function (config) {
             config = config || {};
@@ -72,7 +72,7 @@ var SheetView = require('./SheetView');
         importData: function (data) {
             this.relations.importData(data.relations);
             delete data.relations;
-            _.extend(this, data);
+            Object.assign(this, data);
         },
         
         setSharedStringCollection: function (stringCollection) {

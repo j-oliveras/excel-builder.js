@@ -31,14 +31,14 @@ var Table = function (config) {
     });
     this.initialize(config);
 };
-_.extend(Table.prototype, {
+Object.assign(Table.prototype, {
 
     initialize: function (config) {
         this.displayName = _.uniqueId("Table");
         this.name = this.displayName;
         this.id = this.name;
         this.tableId = this.id.replace('Table', '');
-        _.extend(this, config);
+        Object.assign(this, config);
     },
 
     setReferenceRange: function (start, end) {

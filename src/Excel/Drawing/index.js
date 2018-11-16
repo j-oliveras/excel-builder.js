@@ -13,7 +13,7 @@ var Drawing = function () {
     this.id = _.uniqueId('Drawing');
 };
 
-_.extend(Drawing.prototype, {
+Object.assign(Drawing.prototype, {
     /**
      *
      * @param {String} type Can be 'absoluteAnchor', 'oneCellAnchor', or 'twoCellAnchor'.

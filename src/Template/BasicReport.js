@@ -37,7 +37,7 @@ var Template = function (worksheetConstructorSettings) {
     this.workbook.addTable(this.table);
 };
 
-_.extend(Template.prototype, {
+Object.assign(Template.prototype, {
     setHeader: function () {
         this.worksheet.setHeader.apply(this.worksheet, arguments);
     },

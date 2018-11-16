@@ -12,7 +12,7 @@ var Drawings = function () {
     this.id = _.uniqueId('Drawings');
 };
 
-_.extend(Drawings.prototype, {
+Object.assign(Drawings.prototype, {
     /**
      * Adds a drawing (more likely a subclass of a Drawing) to the 'Drawings' for a particular worksheet.
      *

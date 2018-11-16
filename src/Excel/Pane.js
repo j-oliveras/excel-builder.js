@@ -25,7 +25,7 @@ var Pane = function () {
 
 };
 
-_.extend(Pane.prototype, {
+Object.assign(Pane.prototype, {
 
     freezePane: function(column, row, cell) {
         this._freezePane = {xSplit: column, ySplit: row, cell: cell};

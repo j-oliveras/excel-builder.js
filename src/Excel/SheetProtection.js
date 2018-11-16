@@ -32,7 +32,7 @@ var SheetProtection = function () {
     this.spinCount = null;
 };
 
-_.extend(SheetProtection.prototype, {
+Object.assign(SheetProtection.prototype, {
 
     exportXML: function (doc) {
         var attrs = {};

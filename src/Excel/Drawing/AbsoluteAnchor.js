@@ -21,7 +21,7 @@ var AbsoluteAnchor = function (config) {
         this.setDimensions(config.width, config.height);
     }
 };
-_.extend(AbsoluteAnchor.prototype, {
+Object.assign(AbsoluteAnchor.prototype, {
     /**
      * Sets the X and Y offsets.
      *

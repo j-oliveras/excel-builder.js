@@ -11,7 +11,7 @@ var sharedStrings = function () {
     this.stringArray = [];
     this.id = _.uniqueId('SharedStrings');
 };
-_.extend(sharedStrings.prototype, {
+Object.assign(sharedStrings.prototype, {
     /**
      * Adds a string to the shared string file, and returns the ID of the
      * string which can be used to reference it in worksheets.

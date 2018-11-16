@@ -33,7 +33,7 @@ var SheetView = function (config) {
     this.zoomScaleSheetLayoutView = null;
 };
 
-_.extend(SheetView.prototype, {
+Object.assign(SheetView.prototype, {
 
     /**
      * Added froze pane

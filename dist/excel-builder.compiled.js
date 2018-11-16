@@ -4206,7 +4206,7 @@ var AbsoluteAnchor = function (config) {
         this.setDimensions(config.width, config.height);
     }
 };
-_.extend(AbsoluteAnchor.prototype, {
+Object.assign(AbsoluteAnchor.prototype, {
     /**
      * Sets the X and Y offsets.
      *
@@ -4255,7 +4255,7 @@ var _ = require('lodash');
 var Chart = function () {
 
 };
-_.extend(Chart.prototype, {
+Object.assign(Chart.prototype, {
 
 });
 module.exports = Chart;
@@ -4285,7 +4285,7 @@ var OneCellAnchor = function (config) {
         this.setDimensions(config.width, config.height);
     }
 };
-_.extend(OneCellAnchor.prototype, {
+Object.assign(OneCellAnchor.prototype, {
     setPos: function (x, y, xOff, yOff) {
         this.x = x;
         this.y = y;
@@ -4346,7 +4346,7 @@ var Picture = function () {
 
 Picture.prototype = new Drawing();
 
-_.extend(Picture.prototype, {
+Object.assign(Picture.prototype, {
     setMedia: function (mediaRef) {
         this.mediaData = mediaRef;
     },
@@ -4357,7 +4357,7 @@ _.extend(Picture.prototype, {
         this.fill.type = type;
     },
     setFillConfig: function (config) {
-        _.extend(this.fill, config);
+        Object.assign(this.fill, config);
     },
     getMediaType: function () {
         return 'image';
@@ -4451,7 +4451,7 @@ var TwoCellAnchor = function (config) {
         this.setTo(config.to.x, config.to.y, config.to.xOff, config.to.yOff);
     }
 };
-_.extend(TwoCellAnchor.prototype, {
+Object.assign(TwoCellAnchor.prototype, {
     setFrom: function (x, y, xOff, yOff) {
         this.from.x = x;
         this.from.y = y;
@@ -4533,7 +4533,7 @@ var Drawing = function () {
     this.id = _.uniqueId('Drawing');
 };
 
-_.extend(Drawing.prototype, {
+Object.assign(Drawing.prototype, {
     /**
      *
      * @param {String} type Can be 'absoluteAnchor', 'oneCellAnchor', or 'twoCellAnchor'.
@@ -4583,7 +4583,7 @@ var Drawings = function () {
     this.id = _.uniqueId('Drawings');
 };
 
-_.extend(Drawings.prototype, {
+Object.assign(Drawings.prototype, {
     /**
      * Adds a drawing (more likely a subclass of a Drawing) to the 'Drawings' for a particular worksheet.
      *
@@ -4645,7 +4645,7 @@ var Pane = function () {
 
 };
 
-_.extend(Pane.prototype, {
+Object.assign(Pane.prototype, {
 
     freezePane: function(column, row, cell) {
         this._freezePane = {xSplit: column, ySplit: row, cell: cell};
@@ -4708,7 +4708,7 @@ var RelationshipManager = function () {
 
 _.uniqueId('rId'); //priming
 
-_.extend(RelationshipManager.prototype, {
+Object.assign(RelationshipManager.prototype, {
 
     importData: function (data) {
         this.relations = data.relations;
@@ -4766,7 +4766,7 @@ var sharedStrings = function () {
     this.stringArray = [];
     this.id = _.uniqueId('SharedStrings');
 };
-_.extend(sharedStrings.prototype, {
+Object.assign(sharedStrings.prototype, {
     /**
      * Adds a string to the shared string file, and returns the ID of the
      * string which can be used to reference it in worksheets.
@@ -4844,7 +4844,7 @@ var SheetProtection = function () {
     this.spinCount = null;
 };
 
-_.extend(SheetProtection.prototype, {
+Object.assign(SheetProtection.prototype, {
 
     exportXML: function (doc) {
         var attrs = {};
@@ -4941,7 +4941,7 @@ var SheetView = function (config) {
     this.zoomScaleSheetLayoutView = null;
 };
 
-_.extend(SheetView.prototype, {
+Object.assign(SheetView.prototype, {
 
     /**
      * Added froze pane
@@ -5039,7 +5039,7 @@ var StyleSheet = function () {
     }];
     this.tableStyles = [];
 };
-_.extend(StyleSheet.prototype, {
+Object.assign(StyleSheet.prototype, {
     createSimpleFormatter: function (type) {
         var sid = this.masterCellFormats.length;
         var style = {
@@ -5721,14 +5721,14 @@ var Table = function (config) {
     });
     this.initialize(config);
 };
-_.extend(Table.prototype, {
+Object.assign(Table.prototype, {
 
     initialize: function (config) {
         this.displayName = _.uniqueId("Table");
         this.name = this.displayName;
         this.id = this.name;
         this.tableId = this.id.replace('Table', '');
-        _.extend(this, config);
+        Object.assign(this, config);
     },
 
     setReferenceRange: function (start, end) {
@@ -5886,7 +5886,7 @@ var Workbook = function (config) {
     this.media = {};
     this.initialize(config);
 };
-_.extend(Workbook.prototype, {
+Object.assign(Workbook.prototype, {
 
     initialize: function () {
         this.id = _.uniqueId('Workbook');
@@ -6086,7 +6086,7 @@ _.extend(Workbook.prototype, {
 
     _prepareFilesForPackaging: function (files) {
 
-        _.extend(files, {
+        Object.assign(files, {
             '/[Content_Types].xml': this.createContentTypes(),
             '/_rels/.rels': this.createWorkbookRelationship(),
             '/xl/styles.xml': this.styleSheet.toXML(),
@@ -6159,7 +6159,7 @@ var SheetView = require('./SheetView');
         this.showZeros = null;
         this.initialize(config);
     };
-    _.extend(Worksheet.prototype, {
+    Object.assign(Worksheet.prototype, {
         
         initialize: function (config) {
             config = config || {};
@@ -6201,7 +6201,7 @@ var SheetView = require('./SheetView');
         importData: function (data) {
             this.relations.importData(data.relations);
             delete data.relations;
-            _.extend(this, data);
+            Object.assign(this, data);
         },
         
         setSharedStringCollection: function (stringCollection) {
@@ -6752,7 +6752,7 @@ var XMLDOM = function (ns, rootNodeName) {
     this.documentElement.setAttribute('xmlns', ns);
 };
 
-_.extend(XMLDOM.prototype, {
+Object.assign(XMLDOM.prototype, {
     createElement: function (name) {
         return new XMLDOM.XMLNode({
             nodeName: name
@@ -6779,7 +6779,7 @@ XMLDOM.Node.Create = function (config) {
 XMLDOM.TextNode = function (text) {
     this.nodeValue = text;
 };
- _.extend(XMLDOM.TextNode.prototype, {
+ Object.assign(XMLDOM.TextNode.prototype, {
      toJSON: function () {
          return {
              nodeValue: this.nodeValue,
@@ -6811,7 +6811,7 @@ XMLDOM.XMLNode = function (config) {
         }
     }
 };
-_.extend(XMLDOM.XMLNode.prototype, {
+Object.assign(XMLDOM.XMLNode.prototype, {
 
     toString: function () {
         var string = "<" + this.nodeName;
@@ -7068,7 +7068,7 @@ var Template = function (worksheetConstructorSettings) {
     this.workbook.addTable(this.table);
 };
 
-_.extend(Template.prototype, {
+Object.assign(Template.prototype, {
     setHeader: function () {
         this.worksheet.setHeader.apply(this.worksheet, arguments);
     },

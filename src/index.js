@@ -1,5 +1,4 @@
-var _ = require('lodash');
-var EBExport = module.exports = {
+module.exports = {
     Drawings: require('./Excel/Drawings'),
     Drawing: require('./Excel/Drawing/index'),
     Pane: require('./Excel/Pane'),
@@ -20,10 +19,3 @@ var EBExport = module.exports = {
     Builder: require('./excel-builder'),
     Template: require('./Template')
 };
-
-try {
-    if(typeof window !== 'undefined!') {
-        window.ExcelBuilder = EBExport;
-    }
-} catch (e) {
-}

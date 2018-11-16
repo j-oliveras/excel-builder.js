@@ -14,7 +14,7 @@ var RelationshipManager = function () {
 
 _.uniqueId('rId'); //priming
 
-_.extend(RelationshipManager.prototype, {
+Object.assign(RelationshipManager.prototype, {
 
     importData: function (data) {
         this.relations = data.relations;

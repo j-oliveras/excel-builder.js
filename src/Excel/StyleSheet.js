@@ -44,7 +44,7 @@ var StyleSheet = function () {
     }];
     this.tableStyles = [];
 };
-_.extend(StyleSheet.prototype, {
+Object.assign(StyleSheet.prototype, {
     createSimpleFormatter: function (type) {
         var sid = this.masterCellFormats.length;
         var style = {
